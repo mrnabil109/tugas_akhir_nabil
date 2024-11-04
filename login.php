@@ -1,21 +1,18 @@
 <?php
+session_start(); // Memulai sesi
 
-
-require '../function.php';
+require 'function.php';
 
 if (isset($_SESSION['username'])) {
-    header("Location: ../dashboard.php");
+    header("Location: home.php");
     exit();
 }
 
-
-
+$loginError = ''; // Inisialisasi variabel untuk error
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
-
-
 
     // Call the login function
     $loginError = login($username, $password);
@@ -37,9 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="row justify-content-center">
             <div class="col-md-6 gap-3">
                 <h2 class="mt-5 text-center">Login</h2>
-                <?php if (isset($loginError)): ?>
+                <?php if ($loginError): ?>
                     <div class="alert alert-danger">
-                        <?php echo $loginError; ?>
+                        <?php echo htmlspecialchars($loginError); ?>
                     </div>
                 <?php endif; ?>
                 <form method="post" action="login.php" class="mt-4">
@@ -52,14 +49,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input type="password" name="password" id="password" class="form-control" placeholder="insert password" required>
                     </div>
                     <div class="grid row-gap-3">
-                    <button type="submit" class="btn btn-primary w-100  ">Login</button>
-                          
-                    
+                    <input type="submit"  class="btn btn-primary" value="Login">
                     </div>
-                
-                
                 </form>
-                <button type="button" class="btn btn-secondary w-100 " onclick="window.location.href='registrasi.php'">register</button>
+                <a href="registrasi.php" class="btn btn-secondary">Registrasi</a>
+                
             </div>
         </div>
     </div>

@@ -27,7 +27,7 @@ $member_email = mysqli_real_escape_string($mysqli, $_POST['member_email']);
  }
 unset($_POST['registrasi']);
 mysqli_close($mysqli); }
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,4 +64,4 @@ mysqli_close($mysqli); }
 <body>
     
 </body>
-</html> -->
+</html>

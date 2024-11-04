@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 if (!isset($_SESSION['username'])) {  // menggunakan 'username' yang sama
    header('Location:auth/login.php');

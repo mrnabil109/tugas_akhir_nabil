@@ -1,10 +1,14 @@
 <?php
-session_start();
+
+session_start(); // Memulai sesi
+
+require 'connection.php';
+
 if (!isset($_SESSION['username'])) {
   header("Location: login.php");
   exit();
 }
-require 'connection.php';
+
 $data = myquery(query: "SELECT * FROM tb_menu_makanan");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

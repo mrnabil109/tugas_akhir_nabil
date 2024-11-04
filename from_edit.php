@@ -1,5 +1,5 @@
 <?php
-require 'connection.php';
+// require 'connection.php';
 require 'function.php';
 
 // Ambil ID dari URL

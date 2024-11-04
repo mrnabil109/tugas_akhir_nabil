@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 // Beberapa variable yang penting  ada di connection
 $hostname = 'localhost';

@@ -1,32 +1,36 @@
-<!-- <?php
+<?php
 // Memulai session
-session_start();
-$user = array(
-    "admin" => "password123"
+// session_start();
+// $user = array(
+//     "admin" => "password123"
 
-);
+// );
 
-if (isset($_SESSION['username'])) {
-    header(header: "Location: index.php");
-    exit();
-}
-// Cek apakah form sudah disubmit
-if (isset($_POST['submit_login'])) {
-    // Mengambil data dari form
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    // Validasi username dan password
-    if (isset($user[$username]) && $user[$username] === $password) {
-        // Login berhasil
-        $_SESSION["username"] = $username;
-        header(header: "Location:home.php");
-        exit();
-    } else {
-        // Login gagal
-        $arr = "Username atau password salah.";
-    }
-}
+// if (isset($_SESSION['username'])) {
+//     header(header: "Location: index.php");
+//     exit();
+// }
+// // Cek apakah form sudah disubmit
+// if (isset($_POST['submit_login'])) {
+//     // Mengambil data dari form
+//     $username = $_POST['username'];
+//     $password = $_POST['password'];
+//     // Validasi username dan password
+//     if (isset($user[$username]) && $user[$username] === $password) {
+//         // Login berhasil
+//         $_SESSION["username"] = $username;
+//         header(header: "Location:home.php");
+//         exit();
+//     } else {
+//         // Login gagal
+//         $arr = "Username atau password salah.";
+//     }
+// }
 ?>
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="id">
@@ -58,4 +62,4 @@ if (isset($_POST['submit_login'])) {
 
 </body>
 
-</html> -->
+</html>
